@@ -1,1 +1,0 @@
-((ONCE [0, 50] A(a,b)) AND B(b,c)) AND (ONCE [0,50] C(c,d))
