@@ -1,7 +1,6 @@
 FROM eclipse-temurin:17-jdk AS builder
 RUN apt-get update && apt-get install -y git maven && apt-get clean && rm -rf /var/lib/apt/lists/*
 
-
 WORKDIR /build
 
 ARG REPO_URL="https://git.ku.dk/krq770/monitoring_data_generator.git"
