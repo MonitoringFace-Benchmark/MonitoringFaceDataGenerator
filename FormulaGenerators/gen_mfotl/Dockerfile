@@ -2,7 +2,7 @@
 FROM python:3.9-slim as builder
 
 # Set build arguments (configurable at build time)
-ARG REPO_URL="https://git.ku.dk/krq770/monitoring_benchmark_generator.git"
+ARG REPO_URL="https://git.ku.dk/krq770/monitoring_formula_generator.git"
 ARG BRANCH="main"
 ARG REPO_DIR="/app"
 
