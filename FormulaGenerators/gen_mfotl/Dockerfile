@@ -1,14 +1,14 @@
 # Use official Python image as base
-FROM python:3.9-slim as builder
+FROM python:3.9-slim AS builder
 
 # Set build arguments (configurable at build time)
-ARG REPO_URL="https://git.ku.dk/krq770/monitoring_formula_generator.git"
+ARG REPO_URL="https://git.ku.dk/krq770/monitoring_benchmark_generator.git"
 ARG BRANCH="main"
 ARG REPO_DIR="/app"
 
 # Set environment variables for runtime
-ENV PYTHONDONTWRITEBYTECODE 1
-ENV PYTHONUNBUFFERED 1
+ENV PYTHONDONTWRITEBYTECODE=1
+ENV PYTHONUNBUFFERED=1
 
 # Install system dependencies
 RUN apt-get update && apt-get install -y --no-install-recommends git build-essential && rm -rf /var/lib/apt/lists/*
