@@ -1,9 +1,7 @@
 FROM alpine:3.18
 RUN apk add --no-cache git bash unzip
 
-
 WORKDIR /tmp
-
 RUN git clone https://github.com/LennardEc/nokia_case_study.git
 RUN unzip /tmp/nokia_case_study/data/Trace/trace.csv.zip -d /tmp/nokia_case_study/data/Trace/
 
