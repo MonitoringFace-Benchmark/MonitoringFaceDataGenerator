@@ -1,12 +1,7 @@
-# Use a lightweight base image
 FROM alpine:latest
 
-# Set working directory
-WORKDIR /app
+# Set working directory inside container
+WORKDIR /mnt/host
 
-# Create folder structure
-RUN mkdir -p test/data/1 test/data/2 \
-    && touch test/instruction
-
-# By default, just keep the container running (optional)
-CMD ["sleep", "infinity"]
+# Create folder structure and file when container starts
+CMD mkdir -p data/sub_data1 data/subdata_22 && touch instruction.txt
