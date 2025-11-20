@@ -9,11 +9,10 @@ RUN unzip /tmp/nokia_case_study/data/Trace/trace.csv.zip -d /tmp/nokia_case_stud
 
 
 WORKDIR /mnt/host
-
-# Copy the relevant folders/files from the cloned repo
-COPY /tmp/nokia_case_study/data/Formula /mnt/host/data/Formula
-COPY /tmp/nokia_case_study/data/Signature /mnt/host/data/Signature
-COPY /tmp/nokia_case_study/data/Trace /mnt/host/data/Trace
-COPY /tmp/nokia_case_study/instructions.txt /mnt/host/instructions.txt
+RUN mkdir -p data/Formula data/Signature data/Trace \
+    && cp -r /tmp/nokia_case_study/data/Formula/* data/Formula/ \
+    && cp -r /tmp/nokia_case_study/data/Signature/* data/Signature/ \
+    && cp /tmp/nokia_case_study/data/Trace/trace.csv data/Trace/ \
+    && cp /tmp/nokia_case_study/instructions.txt .
 
 CMD ["echo", "Setup complete. Exiting."]
